@@ -7,10 +7,10 @@
     </div>
 
     <div class="post__btns">
-      <MyButton
-          @click=removePost
+      <my-button
+          @click="removePost"
       >Delete
-      </MyButton>
+      </my-button>
     </div>
 
   </div>
@@ -41,7 +41,6 @@ export default {
   padding: 15px;
   border: 2px solid teal;
   margin-top: 15px;
-  width: fit-content;
   display: flex;
   align-items: center;
   justify-content: space-between;
