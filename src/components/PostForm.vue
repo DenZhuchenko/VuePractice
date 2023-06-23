@@ -3,12 +3,12 @@
     <h4>Create Post</h4>
     <MyInput
         v-model = "post.title"
-        type="text"
+        type="input"
         placeholder="Enter Title"
     />
     <MyInput
         v-model="post.body"
-        type="text"
+        type="input"
         placeholder="Enter Description"
     />
     <MyButton

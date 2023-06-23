@@ -31,6 +31,9 @@ export default {
   methods: {
     removePost() {
       this.$emit('remove', this.post)
+    },
+    testRemoveButton(){
+      this.$emit('removeTest', this.post)
     }
   }
 }

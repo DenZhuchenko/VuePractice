@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+
     <h1>Page with Posts</h1>
     <div class="app__btns">
       <my-button
@@ -12,7 +13,6 @@
           v-model="selectedSort"
       />
     </div>
-
     <my-dialog
         v-model:show="dialogVisible"
     >
@@ -51,7 +51,6 @@ export default {
       selectedSort: ''
     }
   },
-
   methods: {
     createPost(newPost) {
       this.posts.push(newPost)
@@ -77,7 +76,7 @@ export default {
         this.isPostLoading = false
 
       }
-    }
+    },
 
   },
   mounted() {
@@ -87,7 +86,6 @@ export default {
 
 
 </script>
-
 <style>
 * {
   margin: 0;
