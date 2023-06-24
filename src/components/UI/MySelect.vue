@@ -33,4 +33,10 @@ export default {
 }
 </script>
 <style scoped>
+select{
+  height: 40px;
+  border: 2px solid teal;
+
+}
+
 </style>

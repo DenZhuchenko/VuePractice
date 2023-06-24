@@ -2,9 +2,9 @@
 
   <div class="post">
     <div class="postItem">
-      <div><strong>id: {{post.id}}</strong></div>
+      <div><strong>ID: {{post.id}}</strong></div>
       <div><strong>Title: </strong>{{ post.title }}</div>
-      <div><strong>Description: </strong>{{ post.body }}</div>
+      <div><strong>Body: </strong>{{ post.body }}</div>
     </div>
 
     <div class="post__btns">
