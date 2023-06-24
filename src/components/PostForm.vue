@@ -45,15 +45,27 @@ export default {
         }
       }
     }
+  },
+  watch: {
+    post: {
+      handler(newValue) {
+        console.log('newPostValue: ', newValue)
+      },
+      deep: true
+    }
   }
 }
 </script>
 
 <style scoped>
+
+
 .form {
   display: flex;
   flex-direction: column;
+
 }
+
 .form__btn {
   margin-top: 15px;
 }

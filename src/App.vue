@@ -2,21 +2,22 @@
   <div class="app">
 
     <h1>Page with Posts</h1>
-    <div class="app__btns">
+    <div class="app__buttons">
       <my-button
           @click='showDialog'
       >
         Create Post
       </my-button>
-
       <my-select
           v-model="selectedSort"
+          :options="sortOptions"
       />
+
     </div>
     <my-dialog
         v-model:show="dialogVisible"
     >
-      <PostForm
+      <post-form
           @create="createPost"
       />
     </my-dialog>
@@ -48,7 +49,12 @@ export default {
       posts: [],
       dialogVisible: false,
       isPostLoading: false,
-      selectedSort: ''
+      selectedSort: '',
+      sortOptions: [
+        {value: 'title', name: 'sort by title'},
+        {value: 'body', name: 'sort by body'},
+        {value: 'id', name: 'sort by id'}
+      ]
     }
   },
   methods: {
@@ -81,6 +87,21 @@ export default {
   },
   mounted() {
     this.fetchPosts()
+  },
+  watch: {
+    selectedSort(newValue) {
+
+      if (newValue === 'title' || newValue === 'body') {
+        this.posts.sort((post1, post2) => {
+          return post1[newValue].localeCompare(post2[newValue])
+        })
+      } else {
+        this.posts = this.posts.sort((post1, post2) =>{
+          return post1[newValue] - post2[newValue]
+        })
+      }
+
+    }
   }
 }
 
@@ -93,16 +114,15 @@ export default {
   box-sizing: border-box;
 }
 
+
 .app {
   padding: 20px;
 }
 
-.app__btns {
-
+.app__buttons {
   position: fixed;
   top: 0;
   right: 0;
-  background: red;
   display: flex;
   justify-content: space-between;
   margin: 15px 0;

@@ -2,7 +2,7 @@
     <select
         @v-model="modelValue"
         @change="changeOption">
-      <option disabled value="">Choose from list</option>
+      <option selected disabled>Choose from list</option>
       <option
           v-for="option in options"
           :key="option.value"
@@ -16,11 +16,6 @@
 <script>
 export default {
   name: "MySelect",
-  methods: {
-    changeOption(event) {
-      this.$emit('update:modelValue', event)
-    }
-  },
   props: {
     modelValue: {
       type: String
@@ -29,10 +24,13 @@ export default {
       type: Array,
       default: () => []
     }
-  }
+  },
+  methods: {
+    changeOption(event) {
+      this.$emit('update:modelValue', event.target.value)
+    }
+  },
 }
 </script>
-
 <style scoped>
-
 </style>
