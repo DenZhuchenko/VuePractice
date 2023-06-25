@@ -1,6 +1,6 @@
 <template>
 <div v-show="posts.length > 0">
-  <h3>User List</h3>
+  <h3>Post List</h3>
   <transition-group name="post-list">
     <PostItem
         :post="post"

@@ -18,5 +18,6 @@ export default {
   width: fit-content;
   border: 2px solid teal;
   padding: 10px;
+  cursor: pointer;
 }
 </style>
