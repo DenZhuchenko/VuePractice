@@ -1,22 +1,24 @@
 <template>
   <form class="form" @submit.prevent>
     <h4>Create Post</h4>
-    <MyInput
+    <my-input
+        v-focus
         v-model = "post.title"
         type="input"
         placeholder="Enter Title"
     />
-    <MyInput
+    <my-input
         v-model="post.body"
         type="input"
-        placeholder="Enter Description"
+        placeholder="
+        Enter Description"
     />
-    <MyButton
+    <my-button
         class="form__btn"
         @click="createPost"
     >
       Add Post
-    </MyButton>
+    </my-button>
   </form>
 </template>
 

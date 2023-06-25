@@ -11,6 +11,7 @@
       </div>
       <div class="app__buttons-validation">
         <my-input
+            v-focus
             class="app__buttons-validation__input"
             v-model="searchQuery"
             placeholder="Searching..."
@@ -37,7 +38,7 @@
     <div v-if="isPostLoading">Loading...</div>
     <div
         class="observer"
-        ref="observer"
+        v-intersection="loadMorePosts"
     ></div>
 
     <!--    <post-paginator-->
@@ -63,7 +64,6 @@ import MySelect from "@/components/UI/MySelect";
 import MyInput from "@/components/UI/MyInput";
 
 export default {
-  name: "PostPage",
   components: {MyInput, MySelect, MyButton, MyDialog, PostList, PostForm},
   data() {
     return {
@@ -137,18 +137,6 @@ export default {
   },
   mounted() {
     this.fetchPosts()
-
-    const options = {
-      rootMargin: '0px',
-      threshold: 1.0
-    }
-    const callback = (entries) => {
-      if (entries[0].isIntersecting && this.page !== this.totalPages){
-        this.loadMorePosts()
-      }
-    };
-    const observer = new IntersectionObserver(callback, options);
-    observer.observe(this.$refs.observer)
   },
 
   computed: {

@@ -7,7 +7,12 @@
       <div><strong>Body: </strong>{{ post.body }}</div>
     </div>
 
-    <div class="post__btns">
+    <div class="post__buttons">
+      <my-button
+          @click="$router.push(`/post/${post.id}`)"
+      >
+        Open
+      </my-button>
       <my-button
           @click="removePost"
       >Delete
@@ -20,6 +25,7 @@
 
 <script>
 import MyButton from "@/components/UI/MyButton";
+
 export default {
   name: "PostItem",
   components: {MyButton},
@@ -50,6 +56,13 @@ export default {
   justify-content: space-between;
   min-width: 400px;
 
+}
+
+.post__buttons {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  width: 140px;
 }
 
 

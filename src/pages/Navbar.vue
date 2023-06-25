@@ -9,9 +9,9 @@
       <router-link to="post">
         <my-button>Posts</my-button>
       </router-link>
-      <router-link to="about">
-        <my-button>About</my-button>
-      </router-link>
+        <my-button
+            @click="$router.push('/about')"
+        >About</my-button>
     </div>
   </div>
 </template>
