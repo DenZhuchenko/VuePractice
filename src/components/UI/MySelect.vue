@@ -2,7 +2,7 @@
     <select
         @v-model="modelValue"
         @change="changeOption">
-      <option selected disabled>Choose from list</option>
+      <option selected disabled>Sort by</option>
       <option
           v-for="option in options"
           :key="option.value"

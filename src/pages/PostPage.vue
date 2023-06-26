@@ -77,9 +77,9 @@ export default {
       totalPages: 0,
 
       sortOptions: [
-        {value: 'title', name: 'sort by title'},
-        {value: 'body', name: 'sort by body'},
-        {value: 'id', name: 'sort by id'}
+        {value: 'title', name: 'Sort by title'},
+        {value: 'body', name: 'Sort by body'},
+        {value: 'id', name: 'Sort by id'}
       ]
     }
   },

@@ -19,5 +19,9 @@ export default {
   border: 2px solid teal;
   padding: 10px;
   cursor: pointer;
+  border-radius: 4px;
+}
+.button:hover {
+  background: #eee8e8;
 }
 </style>

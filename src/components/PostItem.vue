@@ -39,9 +39,6 @@ export default {
     removePost() {
       this.$emit('remove', this.post)
     },
-    testRemoveButton(){
-      this.$emit('removeTest', this.post)
-    }
   }
 }
 </script>
@@ -54,8 +51,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 400px;
-
 }
 
 .post__buttons {

@@ -32,6 +32,7 @@ export default {
   border: 1px solid teal;
   padding: 10px 15px;
   max-width: 30vw;
+  border-radius: 4px;
 }
 
 </style>

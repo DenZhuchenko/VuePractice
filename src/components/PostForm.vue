@@ -8,6 +8,7 @@
         placeholder="Enter Title"
     />
     <my-input
+        style="margin-top: 15px;"
         v-model="post.body"
         type="input"
         placeholder="
