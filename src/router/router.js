@@ -4,6 +4,7 @@ import About from "@/pages/About";
 import PostPage from "@/pages/PostPage";
 import PostIdPage from "@/components/PostIdPage";
 import PostPageWithStore from "@/pages/PostPageWithStore";
+import PostPageCompositionApi from "@/pages/PostPageCompositionApi";
 
 const routes  = [
     {
@@ -21,9 +22,14 @@ const routes  = [
     {
         path: '/post/:id',
         component: PostIdPage
-    },{
+    },
+    {
         path: '/store',
         component: PostPageWithStore
+    },
+    {
+        path: '/composition',
+        component: PostPageCompositionApi
     }
 ]
 

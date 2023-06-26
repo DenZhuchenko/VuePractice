@@ -1,0 +1,18 @@
+import {computed, ref} from "vue";
+
+export default function useSortedPosts(posts) {
+    const selectedSort = ref('')
+
+
+    const sortedPosts = computed(() => {
+        const titleOrBody = selectedSort.value === 'title' || selectedSort.value === 'body'
+        return titleOrBody
+            ? [...posts.value].sort((post1, post2) => post1[selectedSort.value]?.localeCompare(post2[selectedSort.value]))
+            : [...posts.value].sort((post1, post2) => post1[selectedSort.value] - post2[selectedSort.value])
+    })
+
+    return{
+        selectedSort,
+        sortedPosts
+    }
+}

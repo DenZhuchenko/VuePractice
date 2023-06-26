@@ -15,6 +15,9 @@
       <my-button
             @click="$router.push('/store')"
         >Store</my-button>
+      <my-button
+            @click="$router.push('/composition')"
+        >Composition</my-button>
     </div>
   </div>
 </template>
@@ -37,6 +40,7 @@ h1{
   color: inherit
 }
 .navbar {
+  box-sizing: border-box;
   padding: 20px;
   display: flex;
   height: 50px;
@@ -47,7 +51,6 @@ h1{
 }
 .navbar__buttons {
   display: flex;
-  width: 200px;
   justify-content: space-between;
 }
 </style>

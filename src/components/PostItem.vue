@@ -28,6 +28,7 @@ import MyButton from "@/components/UI/MyButton";
 
 export default {
   name: "PostItem",
+  emits: ["remove"],
   components: {MyButton},
   props: {
     post: {
